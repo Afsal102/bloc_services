@@ -1,4 +1,4 @@
-import 'package:bloc_services/core/core.dart';
+import 'package:bloc_services/src/core/core.dart';
 
 import '../../failures/failures.dart';
 

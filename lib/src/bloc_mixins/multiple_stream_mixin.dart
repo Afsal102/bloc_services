@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:bloc_services/core/core.dart';
+import 'package:bloc_services/src/core/core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
