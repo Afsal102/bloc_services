@@ -1,7 +1,8 @@
 name: bloc_services
 description: A package which has useful implementations of streams considered with the clean architecture way
 version: 0.0.1
-homepage:
+homepage: https://github.com/Afsal102/
+repository: https://github.com/Afsal102/bloc_services
 
 environment:
   sdk: ">=2.13.0 <3.0.0"
