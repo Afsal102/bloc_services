@@ -1,8 +1,7 @@
 import 'package:bloc_services/src/bloc_mixins/bloc_mixins.dart';
+import 'package:bloc_services/src/core/core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:bloc_services/src/core/core.dart';
 
 class StreamProvider<T extends BlocBase<Object?>> extends BlocProvider<T> {
   final CreateBloc<T> create;
@@ -14,14 +13,15 @@ class StreamProvider<T extends BlocBase<Object?>> extends BlocProvider<T> {
     Widget? child,
     bool lazy = false,
   }) : super(
-            create: (context) {
-              final bloc = create.call(context);
-              if (bloc is MultipleStreamMixin) {
-                bloc.initialise();
-                return bloc;
-              }
+          create: (context) {
+            final bloc = create.call(context);
+            if (bloc is MultipleStreamMixin) {
+              bloc.initialise();
               return bloc;
-            },
-            child: child,
-            lazy: lazy);
+            }
+            return bloc;
+          },
+          child: child,
+          lazy: lazy,
+        );
 }

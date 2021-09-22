@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:bloc_services/src/bloc_mixins/multiple_stream_mixin.dart';
 import 'package:bloc_services/src/core/core.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
+
 import '../../failures/failures.dart';
 import '../test_repos/test_repository.dart';
 

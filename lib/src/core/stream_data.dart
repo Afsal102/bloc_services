@@ -1,5 +1,5 @@
-import 'package:equatable/equatable.dart';
 import 'package:bloc_services/src/core/core.dart';
+import 'package:equatable/equatable.dart';
 
 ///@template `StreamData`
 ///* `L` indicates a failure and `R` indicates a proper object.
