@@ -17,9 +17,11 @@ void main() {
     bloc = TestBloc(repository: repository);
   });
   void mockStreamFailure() {
-    when(repository.milliStream()).thenAnswer((realInvocation) =>
-        Stream.fromIterable(
-            [left(const AuthFailure(message: FAILURE_MESSAGE))]));
+    when(repository.milliStream()).thenAnswer(
+      (realInvocation) => Stream.fromIterable(
+        [left(const AuthFailure(message: FAILURE_MESSAGE))],
+      ),
+    );
   }
 
   void checkIfStreamSubscriptionsAreEmpty() {
@@ -33,7 +35,8 @@ void main() {
   test('should check if the [onStreamData] is called for the proper Key ',
       () async {
     when(repository.milliStream()).thenAnswer(
-        (realInvocation) => Stream.fromIterable([right(expectedVal)]));
+      (realInvocation) => Stream.fromIterable([right(expectedVal)]),
+    );
     expectLater(bloc.stream, emitsInOrder([TestLoaded(value: expectedVal)]));
     bloc.add(TestEventLoaded(value: expectedVal));
   });
@@ -42,7 +45,9 @@ void main() {
       () async {
     mockStreamFailure();
     expectLater(
-        bloc.stream, emitsInOrder([TestError(message: FAILURE_MESSAGE)]));
+      bloc.stream,
+      emitsInOrder([TestError(message: FAILURE_MESSAGE)]),
+    );
     bloc.add(TestEventError(message: FAILURE_MESSAGE));
   });
   test('should check if the streamSubscriptions has proper stream with key',

@@ -33,12 +33,14 @@ mixin MultipleStreamMixin<E, S, K extends Object> on Bloc<E, S> {
   StreamSubscription listenToStream(K key, StreamEither stream) {
     return stream.listen(
       (event) {
-        event.fold((error) {
-          onStreamError(key, error);
-        },
-            (data) => {
-                  onStreamData(key, data),
-                });
+        event.fold(
+          (error) {
+            onStreamError(key, error);
+          },
+          (data) => {
+            onStreamData(key, data),
+          },
+        );
       },
     );
   }
