@@ -42,6 +42,7 @@ mixin MultipleStreamMixin<E, S, K extends Object> on Bloc<E, S> {
           },
         );
       },
+      cancelOnError: false,
     );
   }
 
