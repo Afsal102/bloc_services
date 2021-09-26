@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 ///* `L` indicates a failure and `R` indicates a proper object.
 ///
 ///@end template
-class StreamData<L extends Object, R extends Object> extends Equatable {
+class StreamData<L extends Object, R extends Object?> extends Equatable {
   final StreamEither<L, R> stream;
   const StreamData({
     required this.stream,
