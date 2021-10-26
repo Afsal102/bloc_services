@@ -1,0 +1,9 @@
+include: package:lint/analysis_options.yaml
+analyzer:
+  exclude: 
+    - "**/*.mocks.dart"
+    - "**/*.freezed.dart"
+linter:
+  rules:
+    constant_identifier_names: false
+    sort_pub_dependencies: false
