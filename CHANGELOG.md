@@ -1,4 +1,6 @@
 
+## 0.0.4
+* Fixes linter warnings
 ## 0.0.3
 * Added option to make right of either as nullable
 * Listen to streams even when there is an error
