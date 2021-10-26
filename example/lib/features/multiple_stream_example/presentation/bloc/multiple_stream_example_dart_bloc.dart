@@ -1,22 +1,19 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:bloc_services/bloc_services.dart';
 import 'package:example/core/errors/failures/failure.dart';
 import 'package:example/features/multiple_stream_example/domain/repositories/multiple_stream_repository.dart';
 import 'package:example/features/multiple_stream_example/presentation/keys/multiple_stream_keys.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'multiple_stream_example_dart_bloc.freezed.dart';
 part 'multiple_stream_example_dart_event.dart';
 part 'multiple_stream_example_dart_state.dart';
 
-class MultipleStreamExampleDartBloc
-    extends Bloc<MultipleStreamExampleEvent, MultipleStreamExampleState>
-    with
-        MultipleStreamMixin<MultipleStreamExampleEvent,
-            MultipleStreamExampleState, MultipleStreamKeys> {
-  MultipleStreamExampleDartBloc() : super(MultipleStreamExampleInitial());
+class MultipleStreamExampleDartBloc extends Bloc<MultipleStreamExampleEvent, MultipleStreamExampleState>
+    with MultipleStreamMixin<MultipleStreamExampleEvent, MultipleStreamExampleState, MultipleStreamKeys> {
+  MultipleStreamExampleDartBloc() : super(const MultipleStreamExampleInitial());
 
   ///* you can use repository provider or any DI(Dependency injections to get an instance)
   ///used only for the example
