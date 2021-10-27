@@ -36,6 +36,7 @@ void main() {
     when(repository.milliStream()).thenAnswer(
       (realInvocation) => Stream.fromIterable([right(expectedVal)]),
     );
+    bloc.initialise();
     expectLater(bloc.stream, emitsInOrder([TestLoaded(value: expectedVal)]));
     bloc.add(TestEventLoaded(value: expectedVal));
   });

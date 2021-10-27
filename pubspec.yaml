@@ -9,11 +9,11 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  bloc: ^7.2.1
   dartz: ^0.10.0
   equatable: ^2.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.0
   meta: ^1.7.0
 
 dev_dependencies:

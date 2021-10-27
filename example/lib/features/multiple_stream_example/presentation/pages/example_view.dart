@@ -1,4 +1,3 @@
-import 'package:bloc_services/bloc_services.dart';
 import 'package:example/features/multiple_stream_example/presentation/bloc/multiple_stream_example_dart_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +8,8 @@ class ExampleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamProvider(
-        create: (context) => MultipleStreamExampleDartBloc(),
+      body: BlocProvider(
+        create: (context) => MultipleStreamExampleDartBloc()..initialise(),
         child: BlocBuilder<MultipleStreamExampleDartBloc, MultipleStreamExampleState>(
           builder: (context, state) {
             return state.when(
