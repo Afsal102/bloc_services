@@ -52,14 +52,12 @@ mixin _$MultipleStreamKeys {
 
 /// @nodoc
 abstract class $MultipleStreamKeysCopyWith<$Res> {
-  factory $MultipleStreamKeysCopyWith(
-          MultipleStreamKeys value, $Res Function(MultipleStreamKeys) then) =
+  factory $MultipleStreamKeysCopyWith(MultipleStreamKeys value, $Res Function(MultipleStreamKeys) then) =
       _$MultipleStreamKeysCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MultipleStreamKeysCopyWithImpl<$Res>
-    implements $MultipleStreamKeysCopyWith<$Res> {
+class _$MultipleStreamKeysCopyWithImpl<$Res> implements $MultipleStreamKeysCopyWith<$Res> {
   _$MultipleStreamKeysCopyWithImpl(this._value, this._then);
 
   final MultipleStreamKeys _value;
@@ -69,14 +67,11 @@ class _$MultipleStreamKeysCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$MilliKeyCopyWith<$Res> {
-  factory _$MilliKeyCopyWith(_MilliKey value, $Res Function(_MilliKey) then) =
-      __$MilliKeyCopyWithImpl<$Res>;
+  factory _$MilliKeyCopyWith(_MilliKey value, $Res Function(_MilliKey) then) = __$MilliKeyCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$MilliKeyCopyWithImpl<$Res>
-    extends _$MultipleStreamKeysCopyWithImpl<$Res>
-    implements _$MilliKeyCopyWith<$Res> {
+class __$MilliKeyCopyWithImpl<$Res> extends _$MultipleStreamKeysCopyWithImpl<$Res> implements _$MilliKeyCopyWith<$Res> {
   __$MilliKeyCopyWithImpl(_MilliKey _value, $Res Function(_MilliKey) _then)
       : super(_value, (v) => _then(v as _MilliKey));
 

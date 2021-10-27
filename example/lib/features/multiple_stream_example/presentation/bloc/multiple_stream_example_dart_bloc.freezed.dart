@@ -54,21 +54,19 @@ mixin _$MultipleStreamExampleEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MultipleStreamExampleEventCopyWith<MultipleStreamExampleEvent>
-      get copyWith => throw _privateConstructorUsedError;
+  $MultipleStreamExampleEventCopyWith<MultipleStreamExampleEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MultipleStreamExampleEventCopyWith<$Res> {
-  factory $MultipleStreamExampleEventCopyWith(MultipleStreamExampleEvent value,
-          $Res Function(MultipleStreamExampleEvent) then) =
+  factory $MultipleStreamExampleEventCopyWith(
+          MultipleStreamExampleEvent value, $Res Function(MultipleStreamExampleEvent) then) =
       _$MultipleStreamExampleEventCopyWithImpl<$Res>;
   $Res call({int value});
 }
 
 /// @nodoc
-class _$MultipleStreamExampleEventCopyWithImpl<$Res>
-    implements $MultipleStreamExampleEventCopyWith<$Res> {
+class _$MultipleStreamExampleEventCopyWithImpl<$Res> implements $MultipleStreamExampleEventCopyWith<$Res> {
   _$MultipleStreamExampleEventCopyWithImpl(this._value, this._then);
 
   final MultipleStreamExampleEvent _value;
@@ -89,21 +87,17 @@ class _$MultipleStreamExampleEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $AddMilliChangedCopyWith<$Res>
-    implements $MultipleStreamExampleEventCopyWith<$Res> {
-  factory $AddMilliChangedCopyWith(
-          AddMilliChanged value, $Res Function(AddMilliChanged) then) =
+abstract class $AddMilliChangedCopyWith<$Res> implements $MultipleStreamExampleEventCopyWith<$Res> {
+  factory $AddMilliChangedCopyWith(AddMilliChanged value, $Res Function(AddMilliChanged) then) =
       _$AddMilliChangedCopyWithImpl<$Res>;
   @override
   $Res call({int value});
 }
 
 /// @nodoc
-class _$AddMilliChangedCopyWithImpl<$Res>
-    extends _$MultipleStreamExampleEventCopyWithImpl<$Res>
+class _$AddMilliChangedCopyWithImpl<$Res> extends _$MultipleStreamExampleEventCopyWithImpl<$Res>
     implements $AddMilliChangedCopyWith<$Res> {
-  _$AddMilliChangedCopyWithImpl(
-      AddMilliChanged _value, $Res Function(AddMilliChanged) _then)
+  _$AddMilliChangedCopyWithImpl(AddMilliChanged _value, $Res Function(AddMilliChanged) _then)
       : super(_value, (v) => _then(v as AddMilliChanged));
 
   @override
@@ -138,13 +132,11 @@ class _$AddMilliChanged implements AddMilliChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is AddMilliChanged &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
@@ -199,8 +191,7 @@ abstract class AddMilliChanged implements MultipleStreamExampleEvent {
   int get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $AddMilliChangedCopyWith<AddMilliChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddMilliChangedCopyWith<AddMilliChanged> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -239,8 +230,7 @@ mixin _$MultipleStreamExampleState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MultipleStreamExampleInitial value) intial,
-    required TResult Function(MultipleStreamExampleMilliUpdated value)
-        milliUpdated,
+    required TResult Function(MultipleStreamExampleMilliUpdated value) milliUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -254,14 +244,13 @@ mixin _$MultipleStreamExampleState {
 
 /// @nodoc
 abstract class $MultipleStreamExampleStateCopyWith<$Res> {
-  factory $MultipleStreamExampleStateCopyWith(MultipleStreamExampleState value,
-          $Res Function(MultipleStreamExampleState) then) =
+  factory $MultipleStreamExampleStateCopyWith(
+          MultipleStreamExampleState value, $Res Function(MultipleStreamExampleState) then) =
       _$MultipleStreamExampleStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MultipleStreamExampleStateCopyWithImpl<$Res>
-    implements $MultipleStreamExampleStateCopyWith<$Res> {
+class _$MultipleStreamExampleStateCopyWithImpl<$Res> implements $MultipleStreamExampleStateCopyWith<$Res> {
   _$MultipleStreamExampleStateCopyWithImpl(this._value, this._then);
 
   final MultipleStreamExampleState _value;
@@ -272,23 +261,19 @@ class _$MultipleStreamExampleStateCopyWithImpl<$Res>
 /// @nodoc
 abstract class $MultipleStreamExampleInitialCopyWith<$Res> {
   factory $MultipleStreamExampleInitialCopyWith(
-          MultipleStreamExampleInitial value,
-          $Res Function(MultipleStreamExampleInitial) then) =
+          MultipleStreamExampleInitial value, $Res Function(MultipleStreamExampleInitial) then) =
       _$MultipleStreamExampleInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MultipleStreamExampleInitialCopyWithImpl<$Res>
-    extends _$MultipleStreamExampleStateCopyWithImpl<$Res>
+class _$MultipleStreamExampleInitialCopyWithImpl<$Res> extends _$MultipleStreamExampleStateCopyWithImpl<$Res>
     implements $MultipleStreamExampleInitialCopyWith<$Res> {
   _$MultipleStreamExampleInitialCopyWithImpl(
-      MultipleStreamExampleInitial _value,
-      $Res Function(MultipleStreamExampleInitial) _then)
+      MultipleStreamExampleInitial _value, $Res Function(MultipleStreamExampleInitial) _then)
       : super(_value, (v) => _then(v as MultipleStreamExampleInitial));
 
   @override
-  MultipleStreamExampleInitial get _value =>
-      super._value as MultipleStreamExampleInitial;
+  MultipleStreamExampleInitial get _value => super._value as MultipleStreamExampleInitial;
 }
 
 /// @nodoc
@@ -334,8 +319,7 @@ class _$MultipleStreamExampleInitial implements MultipleStreamExampleInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MultipleStreamExampleInitial value) intial,
-    required TResult Function(MultipleStreamExampleMilliUpdated value)
-        milliUpdated,
+    required TResult Function(MultipleStreamExampleMilliUpdated value) milliUpdated,
   }) {
     return intial(this);
   }
@@ -354,32 +338,27 @@ class _$MultipleStreamExampleInitial implements MultipleStreamExampleInitial {
   }
 }
 
-abstract class MultipleStreamExampleInitial
-    implements MultipleStreamExampleState {
+abstract class MultipleStreamExampleInitial implements MultipleStreamExampleState {
   const factory MultipleStreamExampleInitial() = _$MultipleStreamExampleInitial;
 }
 
 /// @nodoc
 abstract class $MultipleStreamExampleMilliUpdatedCopyWith<$Res> {
   factory $MultipleStreamExampleMilliUpdatedCopyWith(
-          MultipleStreamExampleMilliUpdated value,
-          $Res Function(MultipleStreamExampleMilliUpdated) then) =
+          MultipleStreamExampleMilliUpdated value, $Res Function(MultipleStreamExampleMilliUpdated) then) =
       _$MultipleStreamExampleMilliUpdatedCopyWithImpl<$Res>;
   $Res call({int value});
 }
 
 /// @nodoc
-class _$MultipleStreamExampleMilliUpdatedCopyWithImpl<$Res>
-    extends _$MultipleStreamExampleStateCopyWithImpl<$Res>
+class _$MultipleStreamExampleMilliUpdatedCopyWithImpl<$Res> extends _$MultipleStreamExampleStateCopyWithImpl<$Res>
     implements $MultipleStreamExampleMilliUpdatedCopyWith<$Res> {
   _$MultipleStreamExampleMilliUpdatedCopyWithImpl(
-      MultipleStreamExampleMilliUpdated _value,
-      $Res Function(MultipleStreamExampleMilliUpdated) _then)
+      MultipleStreamExampleMilliUpdated _value, $Res Function(MultipleStreamExampleMilliUpdated) _then)
       : super(_value, (v) => _then(v as MultipleStreamExampleMilliUpdated));
 
   @override
-  MultipleStreamExampleMilliUpdated get _value =>
-      super._value as MultipleStreamExampleMilliUpdated;
+  MultipleStreamExampleMilliUpdated get _value => super._value as MultipleStreamExampleMilliUpdated;
 
   @override
   $Res call({
@@ -395,8 +374,7 @@ class _$MultipleStreamExampleMilliUpdatedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$MultipleStreamExampleMilliUpdated
-    implements MultipleStreamExampleMilliUpdated {
+class _$MultipleStreamExampleMilliUpdated implements MultipleStreamExampleMilliUpdated {
   const _$MultipleStreamExampleMilliUpdated(this.value);
 
   @override
@@ -411,19 +389,16 @@ class _$MultipleStreamExampleMilliUpdated
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is MultipleStreamExampleMilliUpdated &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+            (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
-  $MultipleStreamExampleMilliUpdatedCopyWith<MultipleStreamExampleMilliUpdated>
-      get copyWith => _$MultipleStreamExampleMilliUpdatedCopyWithImpl<
-          MultipleStreamExampleMilliUpdated>(this, _$identity);
+  $MultipleStreamExampleMilliUpdatedCopyWith<MultipleStreamExampleMilliUpdated> get copyWith =>
+      _$MultipleStreamExampleMilliUpdatedCopyWithImpl<MultipleStreamExampleMilliUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -451,8 +426,7 @@ class _$MultipleStreamExampleMilliUpdated
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MultipleStreamExampleInitial value) intial,
-    required TResult Function(MultipleStreamExampleMilliUpdated value)
-        milliUpdated,
+    required TResult Function(MultipleStreamExampleMilliUpdated value) milliUpdated,
   }) {
     return milliUpdated(this);
   }
@@ -471,13 +445,11 @@ class _$MultipleStreamExampleMilliUpdated
   }
 }
 
-abstract class MultipleStreamExampleMilliUpdated
-    implements MultipleStreamExampleState {
-  const factory MultipleStreamExampleMilliUpdated(int value) =
-      _$MultipleStreamExampleMilliUpdated;
+abstract class MultipleStreamExampleMilliUpdated implements MultipleStreamExampleState {
+  const factory MultipleStreamExampleMilliUpdated(int value) = _$MultipleStreamExampleMilliUpdated;
 
   int get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MultipleStreamExampleMilliUpdatedCopyWith<MultipleStreamExampleMilliUpdated>
-      get copyWith => throw _privateConstructorUsedError;
+  $MultipleStreamExampleMilliUpdatedCopyWith<MultipleStreamExampleMilliUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
 }
