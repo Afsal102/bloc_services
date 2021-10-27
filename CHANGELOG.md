@@ -1,4 +1,4 @@
-## 0.0.4
+## 0.0.5
 * Removes flutter_bloc and adds bloc^
 * Removes StreamProvider since this slows the navigation
 * adds 100% test coverage
