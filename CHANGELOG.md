@@ -1,4 +1,7 @@
-
+## 0.0.4
+* Removes flutter_bloc and adds bloc^
+* Removes StreamProvider since this slows the navigation
+* adds 100% test coverage
 ## 0.0.4
 * Fixes linter warnings
 ## 0.0.3
