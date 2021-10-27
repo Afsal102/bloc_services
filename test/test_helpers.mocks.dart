@@ -27,10 +27,8 @@ class MockTestRepository extends _i1.Mock implements _i2.TestRepository {
   }
 
   @override
-  _i3.Stream<_i4.Either<_i5.Failure, int>> milliStream() =>
-      (super.noSuchMethod(Invocation.method(#milliStream, []),
-              returnValue: Stream<_i4.Either<_i5.Failure, int>>.empty())
-          as _i3.Stream<_i4.Either<_i5.Failure, int>>);
+  _i3.Stream<_i4.Either<_i5.Failure, int>> milliStream() => (super.noSuchMethod(Invocation.method(#milliStream, []),
+      returnValue: Stream<_i4.Either<_i5.Failure, int>>.empty()) as _i3.Stream<_i4.Either<_i5.Failure, int>>);
   @override
   String toString() => super.toString();
 }

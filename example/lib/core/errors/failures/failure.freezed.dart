@@ -52,8 +52,7 @@ mixin _$Failure {
 
 /// @nodoc
 abstract class $FailureCopyWith<$Res> {
-  factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
-      _$FailureCopyWithImpl<$Res>;
+  factory $FailureCopyWith(Failure value, $Res Function(Failure) then) = _$FailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -67,16 +66,13 @@ class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
 
 /// @nodoc
 abstract class $MilliFailureCopyWith<$Res> {
-  factory $MilliFailureCopyWith(
-          MilliFailure value, $Res Function(MilliFailure) then) =
+  factory $MilliFailureCopyWith(MilliFailure value, $Res Function(MilliFailure) then) =
       _$MilliFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MilliFailureCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
-    implements $MilliFailureCopyWith<$Res> {
-  _$MilliFailureCopyWithImpl(
-      MilliFailure _value, $Res Function(MilliFailure) _then)
+class _$MilliFailureCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res> implements $MilliFailureCopyWith<$Res> {
+  _$MilliFailureCopyWithImpl(MilliFailure _value, $Res Function(MilliFailure) _then)
       : super(_value, (v) => _then(v as MilliFailure));
 
   @override

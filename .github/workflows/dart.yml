@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - release
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "15"
+          distribution: "adopt"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "2.5.2"
+          channel: "stable"
+
+      - name: Install pub Dependencies
+        run: flutter pub get
+
+      - name: Check Format
+        run: flutter format --line-length=80 --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: flutter analyze
+
+      - name: Run Tests
+        run: flutter test --no-pub --coverage
+
+      - name: Check Code Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+        with:
+          path: "./coverage/lcov.info"
+          min_coverage: 90 #This will increase up to 70%
