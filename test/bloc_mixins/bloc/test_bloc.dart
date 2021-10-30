@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../failures/failures.dart';
-import '../test_repos/test_repository.dart';
+import '../../test_helpers.dart';
 
 part 'test_event.dart';
 part 'test_state.dart';
