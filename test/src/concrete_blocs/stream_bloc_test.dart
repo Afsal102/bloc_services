@@ -19,15 +19,15 @@ class StreamBlocTest extends StreamBloc<StreamBlocEvent, int, int> {
   @override
   Stream<int> get dataStream => repository.getPeriodicMillStream();
   @override
-  Future<void> onStreamData(int data) {
+  void onStreamData(int data) {
     add(Increment(value: data));
-    return super.onStreamData(data);
+    super.onStreamData(data);
   }
 
   @override
-  Future<void> onStreamError(Object error, StackTrace stackTrace) {
+  void onStreamError(Object error, StackTrace stackTrace) {
     add(Increment(value: -1));
-    return super.onStreamError(error, stackTrace);
+    super.onStreamError(error, stackTrace);
   }
 }
 

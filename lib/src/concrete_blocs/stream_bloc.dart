@@ -37,12 +37,12 @@ abstract class StreamBloc<Event, State, StreamType extends Object?>
   /// - called when ever the stream emits data
   @mustCallSuper
   @protected
-  Future<void> onStreamData(StreamType data) async {}
+  void onStreamData(StreamType data) {}
 
   /// - called when ever the stream emits error
   @mustCallSuper
   @protected
-  Future<void> onStreamError(Object error, StackTrace stackTrace) async {}
+  void onStreamError(Object error, StackTrace stackTrace) {}
 
   /// - called when the bloc is `disposed` or when `notifySourceChanged`
   /// is called
