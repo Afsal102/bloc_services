@@ -10,7 +10,8 @@ class ExampleView extends StatelessWidget {
     return Scaffold(
       body: BlocProvider(
         create: (context) => MultipleStreamExampleDartBloc()..initialise(),
-        child: BlocBuilder<MultipleStreamExampleDartBloc, MultipleStreamExampleState>(
+        child: BlocBuilder<MultipleStreamExampleDartBloc,
+            MultipleStreamExampleState>(
           builder: (context, state) {
             return state.when(
               intial: () {

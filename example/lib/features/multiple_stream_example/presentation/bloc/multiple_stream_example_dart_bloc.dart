@@ -11,8 +11,11 @@ part 'multiple_stream_example_dart_bloc.freezed.dart';
 part 'multiple_stream_example_dart_event.dart';
 part 'multiple_stream_example_dart_state.dart';
 
-class MultipleStreamExampleDartBloc extends Bloc<MultipleStreamExampleEvent, MultipleStreamExampleState>
-    with MultipleStreamMixin<MultipleStreamExampleEvent, MultipleStreamExampleState, MultipleStreamKeys> {
+class MultipleStreamExampleDartBloc
+    extends Bloc<MultipleStreamExampleEvent, MultipleStreamExampleState>
+    with
+        MultipleStreamMixin<MultipleStreamExampleEvent,
+            MultipleStreamExampleState, MultipleStreamKeys> {
   MultipleStreamExampleDartBloc() : super(const MultipleStreamExampleInitial());
 
   ///* you can use repository provider or any DI(Dependency injections to get an instance)

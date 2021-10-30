@@ -6,7 +6,8 @@ import 'package:flutter/widgets.dart';
 
 ///  `Stream<Either<Failure,Success>>`
 // ignore: lines_longer_than_80_chars
-typedef StreamEither<L extends Object, R extends Object?> = Stream<Either<L, R>>;
+typedef StreamEither<L extends Object, R extends Object?>
+    = Stream<Either<L, R>>;
 
 /// `Map<K,StreamData>`
 typedef StreamDataMap<K> = Map<K, StreamData>;
