@@ -32,7 +32,8 @@ void main() {
     expect(bloc.streamSubscriptions.containsKey(MILLI_KEY), value);
   }
 
-  test('should check if the [onStreamData] is called for the proper Key ', () async {
+  test('should check if the [onStreamData] is called for the proper Key ',
+      () async {
     when(repository.milliStream()).thenAnswer(
       (realInvocation) => Stream.fromIterable([right(expectedVal)]),
     );
@@ -40,7 +41,9 @@ void main() {
     expectLater(bloc.stream, emitsInOrder([TestLoaded(value: expectedVal)]));
     bloc.add(TestEventLoaded(value: expectedVal));
   });
-  test('should check if the [onStreamError] is called for when the data is left', () async {
+  test(
+      'should check if the [onStreamError] is called for when the data is left',
+      () async {
     mockStreamFailure();
     expectLater(
       bloc.stream,
@@ -48,12 +51,14 @@ void main() {
     );
     bloc.add(TestEventError(message: FAILURE_MESSAGE));
   });
-  test('should check if the streamSubscriptions has proper stream with key', () async {
+  test('should check if the streamSubscriptions has proper stream with key',
+      () async {
     mockStreamFailure();
     bloc.initialise();
     checkIfStreamSubscriptionsContainsKey();
   });
-  test('should check if the subscriptions get disposed when the bloc is closed', () {
+  test('should check if the subscriptions get disposed when the bloc is closed',
+      () {
     mockStreamFailure();
     checkIfStreamSubscriptionsAreEmpty();
     bloc.initialise();
@@ -61,7 +66,9 @@ void main() {
     bloc.close();
     checkIfStreamSubscriptionsAreEmpty();
   });
-  test('should check if the [notifySourceChanged] cancels the stream and subscribes again', () {
+  test(
+      'should check if the [notifySourceChanged] cancels the stream and subscribes again',
+      () {
     mockStreamFailure();
     checkIfStreamSubscriptionsAreEmpty();
     bloc.initialise();
