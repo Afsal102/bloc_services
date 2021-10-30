@@ -4,20 +4,19 @@ part of 'test_bloc.dart';
 abstract class TestEvent extends Equatable {}
 
 class TestEventLoaded extends TestEvent {
-  final int value;
   TestEventLoaded({
     required this.value,
   });
+  final int value;
   @override
   List<Object?> get props => [value];
 }
 
 class TestEventError extends TestEvent {
-  final String message;
   TestEventError({
     required this.message,
   });
+  final String message;
   @override
-  // TODO: implement props
   List<Object?> get props => [message];
 }

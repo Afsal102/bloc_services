@@ -12,13 +12,14 @@ import '../test_repos/test_repository.dart';
 part 'test_event.dart';
 part 'test_state.dart';
 
+// ignore: constant_identifier_names
 const MILLI_KEY = 'MILLI_KEY';
 
 class TestBloc extends Bloc<TestEvent, TestState> with MultipleStreamMixin {
-  final TestRepository _repository;
   TestBloc({required TestRepository repository})
       : _repository = repository,
         super(TestInitial());
+  final TestRepository _repository;
 
   @override
   Stream<TestState> mapEventToState(

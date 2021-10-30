@@ -13,16 +13,20 @@ import 'package:flutter/foundation.dart';
 mixin MultipleStreamMixin<E, S, K extends Object> on Bloc<E, S> {
   ///* add the streams with their unique keys to listen for changes
   StreamDataMap<K> get streams;
+
+  /// - contains all the stream's subscriptions which must be disposed
+  /// if the widget is removed from the tress
   @protected
   @visibleForTesting
   StreamSubscriptionsMap<K> streamSubscriptions = {};
 
-  ///* `this` is called by `streamprovider` to listen to streams when its created
+  ///* `this` is called by `streamprovider` to listen to streams when
+  ///its created
   @mustCallSuper
   void initialise() {
     final StreamDataMap _streams = streams;
     if (_streams.isNotEmpty) {
-      for (final K key in streams.keys) {
+      for (final key in streams.keys) {
         streamSubscriptions[key] = listenToStream(key, _streams[key]!.stream);
       }
     }
@@ -57,19 +61,21 @@ mixin MultipleStreamMixin<E, S, K extends Object> on Bloc<E, S> {
   @protected
   void onStreamError(K key, Object? error) {}
 
-  ///* disposed all the `stream subscriptions` when the bloc is closed and empties
+  ///* disposed all the `stream subscriptions` when the bloc
+  ///is closed and empties
   ///the subscriptions map
   @visibleForTesting
   @protected
   void disposeAllStreams() {
     if (streamSubscriptions.isNotEmpty) {
-      for (final K key in streamSubscriptions.keys) {
+      for (final key in streamSubscriptions.keys) {
         disposeStream(streamSubscriptions[key]!);
       }
       streamSubscriptions.clear();
     }
   }
 
+  /// - disposes the provided stream subscription
   @visibleForTesting
   @protected
   void disposeStream(StreamSubscription subscription) {
@@ -80,7 +86,10 @@ mixin MultipleStreamMixin<E, S, K extends Object> on Bloc<E, S> {
   ///* mostly used to change the  stream in runtime
   @mustCallSuper
   void notifySourceChanged(K key) {
-    assert(streamSubscriptions.containsKey(key) == true);
+    assert(
+      streamSubscriptions.containsKey(key) == true,
+      'There is no Subscription related to provided key',
+    );
     disposeStream(streamSubscriptions[key]!);
     streamSubscriptions.remove(key);
     streamSubscriptions[key] = listenToStream(key, streams[key]!.stream);
