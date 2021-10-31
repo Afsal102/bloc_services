@@ -1,3 +1,4 @@
+import 'package:bloc/bloc.dart';
 import 'package:bloc_services/src/concrete_blocs/stream_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,31 +10,29 @@ import '../../test_helpers.mocks.dart';
 class StreamBlocTest extends StreamBloc<StreamBlocEvent, int, int> {
   StreamBlocTest(
     this.repository,
-  ) : super(0) {
-    on<Increment>((event, emit) {
-      emit(event.value);
-    });
-  }
+  ) : super(0);
   final TestRepository repository;
 
   @override
   Stream<int> get dataStream => repository.getPeriodicMillStream();
   @override
-  void onStreamData(int data) {
-    add(Increment(value: data));
-    super.onStreamData(data);
+  Future<void> onStreamData(int data, Emitter<int> emit) async {
+    emit(data);
+    return super.onStreamData(data, emit);
   }
 
   @override
-  void onStreamError(Object error, StackTrace stackTrace) {
-    add(Increment(value: -1));
-    super.onStreamError(error, stackTrace);
+  Future<void> onStreamError(
+    Object error,
+    StackTrace stackTrace,
+    Emitter<int> emit,
+  ) async {
+    emit(-1);
+    return super.onStreamError(error, stackTrace, emit);
   }
 }
 
-abstract class StreamBlocEvent extends Equatable {}
-
-class Increment extends StreamBlocEvent {
+class Increment extends StreamBlocEvent with EquatableMixin {
   Increment({
     required this.value,
   });
@@ -117,5 +116,58 @@ void main() {
       bloc.initialise();
       expect(bloc.stream, emitsInOrder(<int>[-1]));
     });
+  });
+
+  group('OnStreamData()', () {
+    test(
+      'should return true when [onStreamData.hascode] is equal to [streamData]',
+      () {
+        final onStreamData = OnStreamData<int>(streamData: 0);
+        expect(
+          onStreamData.hashCode == onStreamData.streamData.hashCode,
+          equals(true),
+        );
+      },
+    );
+    test(
+      'should return true when two instances are equal',
+      () {
+        final onStreamData = OnStreamData<int>(streamData: 0);
+        final onStreamDataNext = OnStreamData<int>(streamData: 0);
+        expect(
+          onStreamData == onStreamDataNext,
+          equals(true),
+        );
+      },
+    );
+  });
+  group('OnStreamError()', () {
+    test(
+      '''should return true when [onStreamError.hascode] is equal to [error ^ stackTrace].hascode''',
+      () {
+        final onStreamError =
+            OnStreamError(error: Exception(), stackTrace: StackTrace.empty);
+        expect(
+          onStreamError.hashCode ==
+              onStreamError.error.hashCode ^ onStreamError.stackTrace.hashCode,
+          equals(true),
+        );
+      },
+    );
+    test(
+      '''should return true when two instances are equal''',
+      () {
+        final onStreamError =
+            OnStreamError(error: Exception(), stackTrace: StackTrace.empty);
+        final onStreamErrorNext = OnStreamError(
+          error: onStreamError.error,
+          stackTrace: onStreamError.stackTrace,
+        );
+        expect(
+          onStreamError == onStreamErrorNext,
+          equals(true),
+        );
+      },
+    );
   });
 }
