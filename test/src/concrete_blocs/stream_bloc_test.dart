@@ -10,7 +10,11 @@ import '../../test_helpers.mocks.dart';
 class StreamBlocTest extends StreamBloc<StreamBlocEvent, int, int> {
   StreamBlocTest(
     this.repository,
-  ) : super(0);
+  ) : super(0) {
+    on<Increment>((event, emit) {
+      emit(event.value);
+    });
+  }
   final TestRepository repository;
 
   @override
@@ -46,23 +50,26 @@ void main() {
   late MockTestRepository repository;
   setUp(() {
     repository = getMockTestRepository();
+    when(repository.getPeriodicMillStream())
+        .thenAnswer((realInvocation) => Stream.fromIterable([0]));
     bloc = StreamBlocTest(repository);
   });
-  void mockMilliStream() {
+  void mockMilliStream([int val = 5]) {
     when(repository.getPeriodicMillStream())
-        .thenAnswer((realInvocation) => Stream.fromIterable([5]));
+        .thenAnswer((realInvocation) => Stream.fromIterable([val]));
   }
 
   group('dataStreamSubscription', () {
     test('should return [false] when [dataStreamSubscription] is null', () {
-      expect(bloc.dataStreamSubscription, equals(null));
+      bloc.disposeStream();
+      expectLater(bloc.dataStreamSubscription, equals(null));
     });
     test(
       'should return [true] when [dataStreamSubscription] is not null ',
       () {
         mockMilliStream();
 
-        bloc.initialise();
+        // bloc.initialise();
 
         expectLater(bloc.dataStreamSubscription != null, equals(true));
       },
@@ -72,7 +79,7 @@ void main() {
   group('notifySourceChanged', () {
     test('should return [true] when the stream has resubscribed', () {
       mockMilliStream();
-      bloc.initialise();
+
       final subscription = bloc.dataStreamSubscription;
       bloc.notifySourceChanged();
       expect(bloc.dataStreamSubscription != subscription, equals(true));
@@ -87,7 +94,6 @@ void main() {
         ''',
       () async {
         mockMilliStream();
-        bloc.initialise();
 
         expect(bloc.dataStreamSubscription != null, equals(true));
         await bloc.close();
@@ -102,8 +108,7 @@ void main() {
   group('onStreamData', () {
     test('should return  [bloc.state = 5] when onStreamData is called', () {
       mockMilliStream();
-
-      bloc.initialise();
+      final bloc = StreamBlocTest(repository);
 
       expect(bloc.stream, emitsInOrder(<int>[5]));
     });
@@ -113,7 +118,8 @@ void main() {
     test('should return -1 when onStreamError is called', () {
       when(repository.getPeriodicMillStream())
           .thenAnswer((realInvocation) => Stream.error(Exception()));
-      bloc.initialise();
+      final bloc = StreamBlocTest(repository);
+
       expect(bloc.stream, emitsInOrder(<int>[-1]));
     });
   });
@@ -169,5 +175,12 @@ void main() {
         );
       },
     );
+  });
+
+  group('Custom Events', () {
+    test('[onIncrement] should return true when the state is -50', () {
+      bloc.add(Increment(value: -50));
+      expect(bloc.stream, emitsInOrder(<int>[-50]));
+    });
   });
 }

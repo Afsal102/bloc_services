@@ -17,6 +17,7 @@ abstract class StreamBloc<Event extends StreamBlocEvent, State,
     on<OnStreamError>((event, emit) async {
       await onStreamError(event.error, event.stackTrace, emit);
     });
+    initialise();
   }
 
   /// - Stream to listen for when the bloc is created

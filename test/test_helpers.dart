@@ -4,7 +4,12 @@ import 'package:mockito/annotations.dart';
 import 'failures/concrete_failure.dart';
 import 'test_helpers.mocks.dart';
 
-@GenerateMocks([], customMocks: [MockSpec<TestRepository>()])
+@GenerateMocks(
+  [],
+  customMocks: [
+    MockSpec<TestRepository>(returnNullOnMissingStub: true),
+  ],
+)
 void testHelpers() {}
 MockTestRepository getMockTestRepository() {
   return MockTestRepository();
