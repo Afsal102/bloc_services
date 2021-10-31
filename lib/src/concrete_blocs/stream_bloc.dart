@@ -12,8 +12,6 @@ abstract class StreamBloc<Event, State, StreamType extends Object?>
   ///{@macro streambloc}
   StreamBloc(State initial) : super(initial);
 
-  @visibleForTesting
-
   /// - Stream to listen for when the bloc is created
   Stream<StreamType> get dataStream;
 
