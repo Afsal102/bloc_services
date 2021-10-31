@@ -19,6 +19,7 @@ abstract class StreamBloc<Event, State, StreamType extends Object?>
 
   /// - the stream subscription for the provided `dataStream`
   /// - will be initialised when the stream is subscribed
+  @visibleForTesting
   StreamSubscription<StreamType>? dataStreamSubscription;
 
   /// - must be called for the stream to be listened
