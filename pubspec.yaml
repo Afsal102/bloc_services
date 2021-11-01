@@ -1,6 +1,6 @@
 name: bloc_services
 description: A package which has useful implementations of streams considered with the clean architecture way
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/Afsal102/
 repository: https://github.com/Afsal102/bloc_services
 
