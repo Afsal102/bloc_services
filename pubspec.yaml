@@ -1,6 +1,6 @@
 name: bloc_services
 description: A package which has useful implementations of streams considered with the clean architecture way
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/Afsal102/
 repository: https://github.com/Afsal102/bloc_services
 
@@ -17,12 +17,11 @@ dependencies:
   meta: ^1.7.0
 
 dev_dependencies:
-  bloc_test: ^8.2.0
   build_runner: ^2.1.2
   flutter_test:
     sdk: flutter
-  lint: ^1.7.2
   mockito: ^5.0.16
+  very_good_analysis: ^2.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

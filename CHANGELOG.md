@@ -1,3 +1,6 @@
+## 0.0.6
+* Adds StreamBloc
+* Adds Stream Bloc Example
 ## 0.0.5
 * Removes flutter_bloc and adds bloc^
 * Removes StreamProvider since this slows the navigation

@@ -1,4 +1,4 @@
-import 'package:example/features/multiple_stream_example/presentation/pages/example_view.dart';
+import 'package:example/features/stream_bloc_example/page/stream_bloc_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ExampleView(),
+      home: const StreamBlocPage(),
     );
   }
 }

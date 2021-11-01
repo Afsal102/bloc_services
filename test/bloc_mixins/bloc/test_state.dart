@@ -9,19 +9,19 @@ abstract class TestState extends Equatable {
 class TestInitial extends TestState {}
 
 class TestLoaded extends TestState {
-  final int value;
   TestLoaded({
     required this.value,
   });
+  final int value;
   @override
   List<Object?> get props => [value];
 }
 
 class TestError extends TestState {
-  final String message;
   TestError({
     required this.message,
   });
+  final String message;
   @override
   List<Object?> get props => [message];
 }
