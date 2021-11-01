@@ -7,8 +7,8 @@ import 'package:flutter/foundation.dart';
 ///  - Contains implementation for single subscription streams
 ///  - `StreamType` - the return type of the stream
 ///{@endtemplate}‚
-abstract class StreamBloc<Event extends StreamBlocEvent, State,
-    StreamType extends Object?> extends Bloc<StreamBlocEvent, State> {
+abstract class StreamBloc<State, StreamType extends Object?>
+    extends Bloc<StreamBlocEvent, State> {
   ///{@macro streambloc}
   StreamBloc(State initial) : super(initial) {
     on<OnStreamData<StreamType>>((event, emit) async {

@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import '../../test_helpers.dart';
 import '../../test_helpers.mocks.dart';
 
-class StreamBlocTest extends StreamBloc<StreamBlocEvent, int, int> {
+class StreamBlocTest extends StreamBloc<int, int> {
   StreamBlocTest(
     this.repository,
   ) : super(0) {
